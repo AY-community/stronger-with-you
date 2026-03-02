@@ -1,0 +1,1341 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200&display=swap');
+
+/* ── Reset ────────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+}
+
+/* ── Main wrapper ─────────────────────────────────────── */
+.main-wrapper {
+  position: relative;
+  z-index: 1;
+  background: #000;
+  overflow-x: hidden;
+}
+
+/* ── Header ───────────────────────────────────────────── */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+  will-change: transform, opacity, filter;
+}
+
+.header__brand {
+  color: white;
+  font-weight: 500;
+  font-size: clamp(0.7rem, 1.5vw, 0.95rem);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+}
+
+.header__menu-btn {
+  position: absolute;
+  left: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+}
+
+.header__menu-btn span {
+  display: block;
+  width: 28px;
+  height: 1.5px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.header__logo {
+  position: absolute;
+  right: 2rem;
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ── Intro overlay ────────────────────────────────────── */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-overlay video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.intro-overlay__loader {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.intro-overlay__loader p {
+  color: white;
+  font-weight: 200;
+  font-size: 0.75rem;
+  opacity: 0.4;
+  margin: 0;
+  letter-spacing: 0.2em;
+}
+
+/* ── Loader bar ───────────────────────────────────────── */
+.loader-bar {
+  width: 200px;
+  height: 1px;
+  background: #333;
+  border-radius: 2px;
+}
+
+.loader-bar__fill {
+  height: 100%;
+  background: white;
+  border-radius: 2px;
+  transition: width 0.2s linear;
+}
+
+/* ── Loading screen ───────────────────────────────────── */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  color: white;
+}
+
+.loading-screen p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 200;
+  opacity: 0.6;
+  letter-spacing: 0.3em;
+}
+
+/* ── Canvas scroll section ────────────────────────────── */
+.scroll-section {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  margin: 0;
+}
+
+.canvas-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 0;
+  will-change: border-radius;
+}
+
+.canvas-wrap canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── Hero overlay ─────────────────────────────────────── */
+.canvas-gradient-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.6)     50%,
+    #000                   100%
+  );
+  will-change: opacity;
+}
+
+.hero-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 52%;
+  z-index: 10;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.55) 30%,
+    rgba(0, 0, 0, 0.92) 65%,
+    #000 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  pointer-events: none;
+  will-change: transform, opacity, filter;
+}
+
+.hero-overlay__inner {
+  padding: 0 clamp(2rem, 6vw, 6rem) clamp(2.5rem, 5vh, 4rem);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.hero-overlay__eyebrow {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: clamp(0.6rem, 1vw, 0.7rem);
+  font-weight: 300;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+}
+
+.hero-overlay__title {
+  color: #fff;
+  font-size: clamp(2.2rem, 7vw, 6.5rem);
+  font-weight: 200;
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.hero-overlay__title span {
+  font-weight: 100;
+  opacity: 0.75;
+  font-style: normal;
+  letter-spacing: 0.06em;
+  font-size: 0.72em;
+}
+
+.hero-overlay__scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.hero-overlay__scroll-label {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+}
+
+.hero-overlay__scroll-line {
+  position: relative;
+  width: 80px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: visible;
+}
+
+.hero-overlay__scroll-dot {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #fff;
+  animation: dotRide 1.8s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes dotRide {
+  0%   { left: 0;    opacity: 0; }
+  10%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { left: calc(100% - 4px); opacity: 0; }
+}
+
+/* ── Bottom text pills ────────────────────────────────── */
+.bottom-text {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.bottom-text--1 {
+  bottom: 6rem;
+  left: clamp(2rem, 6vw, 6rem);
+}
+
+.bottom-text--2 {
+  bottom: 3rem;
+  left: clamp(2rem, 6vw, 6rem);
+}
+
+.bottom-text__bar {
+  width: 2px;
+  height: 3rem;
+  background: rgb(212, 160, 82);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.bottom-text__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.bottom-text__label {
+  color: rgb(212, 160, 82);
+  font-size: 0.6rem;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.bottom-text__title {
+  color: white;
+  font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+  font-weight: 200;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* ── Gradient bridge ──────────────────────────────────── */
+.gradient-bridge {
+  height: 0vh;
+  background: #000;
+  width: 100%;
+}
+
+/* ── Black spacer / reveal words ─────────────────────── */
+.black-spacer {
+  height: calc(100vh);
+  background: #000;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 clamp(1.5rem, 8vw, 9rem);
+  margin-block: 200vh;
+}
+
+.reveal-rule {
+  position: absolute;
+  left: clamp(1.5rem, 8vw, 9rem);
+  right: clamp(1.5rem, 8vw, 9rem);
+  height: 1px;
+  background: rgba(212, 160, 82, 0.25);
+}
+
+.reveal-rule--top { top: clamp(2.5rem, 5vh, 4.5rem); }
+
+.reveal-rule--bottom {
+  bottom: clamp(2.5rem, 5vh, 4.5rem);
+  background: none;
+  border-top: 1px solid rgba(212, 160, 82, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 0.9rem;
+  height: auto;
+}
+
+.reveal-tagline {
+  color: rgba(212, 160, 82, 0.55);
+  font-size: 0.6rem;
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.reveal-words {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 2vh, 2rem);
+  width: 100%;
+}
+
+.reveal-word-row {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  padding-left: 3.5rem;
+}
+
+.reveal-word-index {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(212, 160, 82);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.55rem, 1vw, 0.8rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  opacity: 0.7;
+  user-select: none;
+}
+
+.reveal-word-text {
+  display: block;
+  color: #fff;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 11vw, 10rem);
+  font-weight: 300;
+  font-style: italic;
+  text-transform: capitalize;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  user-select: none;
+}
+
+.word-cover {
+  position: absolute;
+  inset: -4px -2px;
+  background: rgb(212, 160, 82);
+  transform: scaleX(1);
+  transform-origin: left center;
+  will-change: transform;
+  border-radius: 2px;
+}
+
+/* ── Content section ──────────────────────────────────── */
+.content-section {
+  height: 100vh;
+  background: #fff;
+  padding: 5rem;
+}
+
+.content-section h2 {
+  font-weight: 200;
+  letter-spacing: 0.2em;
+}
+
+/* ═══════════════════════════════════════════════════════
+   ARMANI EDITORIAL — FULLY RESPONSIVE
+═══════════════════════════════════════════════════════ */
+
+.armani-editorial {
+  position: relative;
+  background: #050505;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(4rem, 10vh, 8rem) clamp(1.5rem, 7vw, 7rem);
+  gap: clamp(3rem, 6vh, 6rem);
+}
+
+/* Portrait background */
+.armani-editorial__portrait {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.armani-editorial__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: brightness(0.35) saturate(0.3) contrast(1.1);
+  display: block;
+}
+
+.armani-editorial__portrait-vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 70% 60% at 50% 30%,
+      rgba(0, 0, 0, 0)    0%,
+      rgba(0, 0, 0, 0.55) 60%,
+      rgba(0, 0, 0, 0.92) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6)  0%,
+      rgba(0, 0, 0, 0)    25%,
+      rgba(0, 0, 0, 0)    65%,
+      rgba(0, 0, 0, 0.95) 100%
+    );
+}
+
+/* Big BG watermark text */
+.armani-editorial__bg-text {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(5rem, 24vw, 26rem);
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(212, 160, 82, 0.08);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+/* Header block */
+.armani-editorial__header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+}
+
+.armani-editorial__eyebrow {
+  color: rgb(212, 160, 82);
+  font-size: 0.6rem;
+  font-weight: 300;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+}
+
+.armani-editorial__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 9vw, 8rem);
+  font-weight: 300;
+  color: #fff;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+
+.armani-editorial__title em {
+  font-style: italic;
+  color: rgb(212, 160, 82);
+  font-weight: 300;
+}
+
+.armani-editorial__title .title-line {
+  display: block;
+}
+
+/* ── Journal / Cards area ─────────────────────────────── */
+
+/*
+  Desktop  (≥ 1024px): absolute-positioned overlapping cards — original layout
+  Tablet   (600–1023px): 2-column flex grid
+  Mobile   (< 600px): single column stack
+*/
+
+.armani-editorial__journal {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* ─ Desktop layout (keep original absolute positions) ─── */
+@media (min-width: 1024px) {
+  .armani-editorial__journal {
+    height: 85vh;
+  }
+
+  .journal-img {
+    position: absolute;
+  }
+
+  /*
+    Three-card centered cluster:
+    All three cards are positioned with `left` so they form a group
+    that sits in the middle of the viewport, not edge-to-edge.
+    Combined visual span ≈ 12% → 86%, centering the group at ~49%.
+  */
+  .journal-img--1 {
+    width: clamp(240px, 29vw, 400px);
+    height: clamp(320px, 48vh, 560px);
+    top: 4%;
+    left: 12%;
+    transform: rotate(-5deg) translateY(30px);
+    z-index: 1;
+  }
+  .journal-img--1:hover {
+    transform: rotate(-1.5deg) translateY(0px) scale(1.02);
+  }
+
+  /* Card 2 — sits in the visual centre, overlaps card 1 */
+  .journal-img--2 {
+    width: clamp(280px, 34vw, 460px);
+    height: clamp(380px, 56vh, 660px);
+    top: 2%;
+    left: 34%;
+    transform: rotate(1.5deg) translateY(10px);
+    z-index: 2;
+  }
+  .journal-img--2:hover {
+    transform: rotate(0deg) translateY(-10px) scale(1.02);
+  }
+
+  /* Card 3 — right of centre, anchored by left so it stays in the group */
+  .journal-img--3 {
+    width: clamp(210px, 26vw, 360px);
+    height: clamp(280px, 40vh, 500px);
+    top: 16%;
+    left: 62%;
+    transform: rotate(4.5deg) translateY(15px);
+    z-index: 3;
+  }
+  .journal-img--3:hover {
+    transform: rotate(1.5deg) translateY(-5px) scale(1.02);
+  }
+
+  .journal-pullquote {
+    position: absolute;
+    bottom: 0;
+    left: 12%;
+    z-index: 4;
+    max-width: 300px;
+  }
+}
+
+/* ─ Tablet layout (600px – 1023px) ─────────────────────── */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .armani-editorial__journal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1.5rem;
+    height: auto;
+  }
+
+  .journal-img {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    height: clamp(260px, 40vw, 420px) !important;
+    transform: none !important;
+    border-radius: 4px;
+  }
+
+  /* Card 1 spans both columns at top for visual drama */
+  .journal-img--1 {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    transform: rotate(-1.5deg) !important;
+  }
+
+  .journal-img--2 {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    transform: rotate(1deg) !important;
+  }
+
+  .journal-img--3 {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    transform: rotate(-0.5deg) !important;
+  }
+
+  .journal-pullquote {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    z-index: 4;
+    max-width: 100%;
+    grid-column: 2 / 3;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  /* Hover states for tablet — subtle */
+  .journal-img--1:hover { transform: rotate(0deg) scale(1.01) !important; }
+  .journal-img--2:hover { transform: rotate(0deg) scale(1.01) !important; }
+  .journal-img--3:hover { transform: rotate(0deg) scale(1.01) !important; }
+}
+
+/* ─ Mobile layout (< 600px) ─────────────────────────────── */
+@media (max-width: 599px) {
+  .armani-editorial__journal {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    height: auto;
+  }
+
+  .journal-img {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    height: clamp(240px, 70vw, 380px) !important;
+    transform: none !important;
+    border-radius: 4px;
+  }
+
+  /* Slight alternating tilt for visual interest */
+  .journal-img--1 { transform: rotate(-0.8deg) !important; }
+  .journal-img--2 { transform: rotate(0.5deg) !important; }
+  .journal-img--3 { transform: rotate(-0.4deg) !important; }
+
+  .journal-img--1:hover,
+  .journal-img--2:hover,
+  .journal-img--3:hover {
+    transform: rotate(0deg) scale(1.01) !important;
+  }
+
+  .journal-pullquote {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    z-index: 4;
+    max-width: 100%;
+    padding: 0.5rem 0 0.5rem 0.25rem;
+  }
+
+  .journal-pullquote span {
+    font-size: 4rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .journal-pullquote p {
+    font-size: clamp(1.25rem, 5vw, 1.8rem);
+  }
+}
+
+/* ─ Shared journal card styles ───────────────────────────── */
+.journal-img {
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(212, 160, 82, 0.15),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.7s ease,
+              z-index 0s;
+  cursor: pointer;
+}
+
+.journal-img:hover {
+  box-shadow:
+    0 60px 140px rgba(0, 0, 0, 0.95),
+    0 0 40px rgba(212, 160, 82, 0.12),
+    0 0 0 1px rgba(212, 160, 82, 0.4),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+  z-index: 10 !important;
+}
+
+.journal-img__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.journal-img__inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.82) contrast(1.08) saturate(0.85);
+  transition: filter 0.7s ease, transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.journal-img:hover .journal-img__inner img {
+  filter: brightness(0.95) contrast(1.05) saturate(1);
+  transform: scale(1.04);
+}
+
+.journal-img__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3rem 1.4rem 1.2rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+  color: rgba(255,255,255,0.45);
+  font-size: 0.52rem;
+  font-weight: 300;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+}
+
+/* Pullquote shared styles */
+.journal-pullquote span {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 6rem;
+  line-height: 0.4;
+  color: rgb(212, 160, 82);
+  opacity: 0.45;
+  margin-bottom: 0.8rem;
+}
+
+.journal-pullquote p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.3;
+}
+
+/* ── Editorial footer ─────────────────────────────────── */
+.armani-editorial__footer {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(1.5rem, 4vh, 4rem);
+}
+
+.armani-editorial__footer-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(212, 160, 82, 0.18);
+  margin-bottom: 2.5rem;
+}
+
+.armani-editorial__footer-cols {
+  display: flex;
+  gap: clamp(2rem, 8vw, 8rem);
+  flex-wrap: wrap;
+}
+
+.armani-editorial__col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.armani-editorial__col-label {
+  color: rgba(212, 160, 82, 0.55);
+  font-size: 0.52rem;
+  font-weight: 300;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+}
+
+.armani-editorial__col-value {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.9rem, 1.8vw, 1.4rem);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* ── Footer BG image ──────────────────────────────────── */
+.footer-bg-image {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.footer-bg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  filter: brightness(0.65) saturate(0.6) contrast(1.1);
+  animation: footerDrift 14s ease-in-out infinite alternate;
+  transform-origin: center center;
+}
+
+@keyframes footerDrift {
+  from { transform: scale(1.00) translateX(0px); }
+  to   { transform: scale(1.06) translateX(-18px); }
+}
+
+.footer-bg-image__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 60% 70% at 50% 60%,
+      rgba(212, 160, 82, 0.18) 0%,
+      rgba(212, 160, 82, 0.06) 40%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 40% 50% at 50% 50%,
+      rgba(255, 200, 100, 0.08) 0%,
+      transparent 60%
+    ),
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.1)  40%,
+      rgba(0, 0, 0, 0)    100%
+    );
+  pointer-events: none;
+}
+
+.footer-bg-image__label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.footer-bg-image__eyebrow {
+  color: rgba(212, 160, 82, 0.6);
+  font-size: 0.58rem;
+  font-weight: 300;
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-bg-image__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 9vw, 8rem);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,0.12);
+  letter-spacing: 0.18em;
+  line-height: 1;
+  -webkit-text-stroke: 1px rgba(212, 160, 82, 0.18);
+  white-space: nowrap;
+}
+
+/* ── Footer scene ─────────────────────────────────────── */
+.footer-scene {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: block;
+}
+
+/* ── Armani Footer ────────────────────────────────────── */
+.armani-footer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse 80% 55% at 10% 110%,
+      rgba(100, 62, 8, 0.16) 0%,
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 55% 70% at 88% 0%,
+      rgba(28, 16, 52, 0.2) 0%,
+      transparent 60%
+    ),
+    #07060a;
+  padding: clamp(3rem, 8vh, 6rem) clamp(1.5rem, 7vw, 7rem) 0;
+}
+
+.armani-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: clamp(1.5rem, 7vw, 7rem);
+  right: clamp(1.5rem, 7vw, 7rem);
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(212, 160, 82, 0.45) 20%,
+    rgba(212, 160, 82, 0.85) 50%,
+    rgba(212, 160, 82, 0.45) 80%,
+    transparent 100%
+  );
+  filter: drop-shadow(0 0 8px rgba(212, 160, 82, 0.3));
+}
+
+.armani-footer__body {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(2rem, 7vw, 7rem);
+  padding-bottom: clamp(3rem, 7vh, 5rem);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.armani-footer__brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  flex: 0 0 auto;
+  max-width: 360px;
+}
+
+.armani-footer__wordmark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.8vw, 3rem);
+  font-weight: 300;
+  font-style: italic;
+  color: #fff;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.armani-footer__wordmark em {
+  color: rgb(212, 160, 82);
+  font-style: normal;
+}
+
+.armani-footer__community-label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.armani-footer__community-label::before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: rgb(212, 160, 82);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.armani-footer__community-label span {
+  color: rgb(212, 160, 82);
+  font-size: 0.5rem;
+  font-weight: 300;
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+}
+
+.armani-footer__desc {
+  color: rgba(255,255,255,0.27);
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.9;
+  letter-spacing: 0.03em;
+}
+
+.armani-footer__socials {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.armani-footer__social-link {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(212,160,82,0.14);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.22);
+  font-size: 0.52rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: border-color 0.35s ease, color 0.35s ease, background 0.35s ease;
+  cursor: pointer;
+}
+
+.armani-footer__social-link:hover {
+  border-color: rgba(212,160,82,0.55);
+  color: rgb(212,160,82);
+  background: rgba(212,160,82,0.05);
+}
+
+.armani-footer__divider {
+  width: 1px;
+  align-self: stretch;
+  flex-shrink: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(212,160,82,0.14) 25%,
+    rgba(212,160,82,0.14) 75%,
+    transparent 100%
+  );
+}
+
+.armani-footer__right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+  gap: 2.5rem;
+  align-items: flex-end;
+}
+
+.armani-footer__index-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(4rem, 14vw, 12rem);
+  font-weight: 300;
+  font-style: italic;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(212,160,82,0.08);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -0.03em;
+  align-self: flex-end;
+  transform: translateY(6px);
+}
+
+.armani-footer__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: flex-end;
+}
+
+.armani-footer__tag {
+  border: 1px solid rgba(212,160,82,0.13);
+  color: rgba(255,255,255,0.28);
+  font-size: 0.5rem;
+  font-weight: 300;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  padding: 0.42rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+.armani-footer__tag:hover {
+  border-color: rgba(212,160,82,0.5);
+  color: rgba(212,160,82,0.85);
+  background: rgba(212,160,82,0.04);
+}
+
+.armani-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 0 clamp(2rem, 4vh, 3rem);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.armani-footer__copy {
+  color: rgba(255,255,255,0.14);
+  font-size: 0.54rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.armani-footer__legal {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.armani-footer__legal-link {
+  color: rgba(255,255,255,0.14);
+  font-size: 0.54rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.armani-footer__legal-link:hover {
+  color: rgba(212,160,82,0.55);
+}
+
+.armani-footer__sigil {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(212,160,82,0.18);
+  letter-spacing: 0.1em;
+  user-select: none;
+}
+
+.footer-reveal-spacer {
+  height: 50vh;
+  width: 100%;
+  background: transparent;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+═══════════════════════════════════════════════════════ */
+
+/* ── Tablet (≤ 1023px) ───────────────────────────────── */
+@media (max-width: 1023px) {
+  .header__logo {
+    height: 50px;
+  }
+
+  .armani-footer__body {
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+  }
+}
+
+/* ── Mobile landscape + tablet portrait (≤ 750px) ─────── */
+@media (max-width: 750px) {
+  .header__brand {
+    display: none;
+  }
+
+  .armani-footer__body {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .armani-footer__divider {
+    display: none;
+  }
+
+  .armani-footer__right {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .armani-footer__tags {
+    justify-content: flex-start;
+  }
+
+  .armani-footer__index-num {
+    align-self: flex-start;
+  }
+
+  .bottom-text--1,
+  .bottom-text--2 {
+    left: 1.5rem;
+  }
+
+  .black-spacer {
+    padding: 0 1.5rem;
+    margin-block: 150vh;
+  }
+
+  .reveal-word-row {
+    padding-left: 2.75rem;
+  }
+}
+
+/* ── Small mobile (≤ 480px) ──────────────────────────── */
+@media (max-width: 480px) {
+  .header {
+    padding: 1.2rem 1.25rem;
+  }
+
+  .header__menu-btn {
+    left: 1.25rem;
+  }
+
+  .header__logo {
+    right: 1.25rem;
+    height: 40px;
+  }
+
+  .hero-overlay__title {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .hero-overlay__inner {
+    padding: 0 1.5rem clamp(2rem, 5vh, 3.5rem);
+  }
+
+  .armani-editorial {
+    padding: 3.5rem 1.25rem;
+    gap: 2.5rem;
+  }
+
+  .armani-editorial__footer-cols {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .armani-editorial__bg-text {
+    font-size: clamp(4rem, 22vw, 8rem);
+    letter-spacing: 0.2em;
+  }
+
+  .armani-footer {
+    padding: 2.5rem 1.25rem 0;
+  }
+
+  .armani-footer::before {
+    left: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .armani-footer__brand-col {
+    max-width: 100%;
+  }
+
+  .armani-footer__desc {
+    font-size: 0.75rem;
+  }
+
+  .armani-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .armani-footer__legal {
+    gap: 1.25rem;
+  }
+
+  .armani-footer__copy {
+    font-size: 0.48rem;
+  }
+
+  .reveal-tagline {
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+  }
+
+  .black-spacer {
+    margin-block: 100vh;
+  }
+}
