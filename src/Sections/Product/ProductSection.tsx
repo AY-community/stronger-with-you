@@ -238,7 +238,7 @@ export default function ProductSection() {
   };
 
   /* ── mouse tracking for hover glow ── */
-  const onCardMouseMove = (e: React.MouseEvent<HTMLDivElement>, idx: number) => {
+  const onCardMouseMove = (e: React.MouseEvent<HTMLDivElement>, _idx: number) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setMousePos({
       x: ((e.clientX - rect.left) / rect.width) * 100,
@@ -421,7 +421,7 @@ export default function ProductSection() {
 
       {/* ── Featured 3 full-width ── */}
       <div ref={featuredRef} className="ps-featured">
-        {FEATURED.map((f, i) => (
+        {FEATURED.map((f, _i) => (
           <div
             key={f.id}
             className="featured-card"
