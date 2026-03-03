@@ -1,10 +1,10 @@
 <div align="center">
-  <img src="https://images.emporio-armani.com/is/image/EmporioArmani/stronger-with-you-banner?wid=1400" alt="Stronger With You — Emporio Armani" width="100%" />
+  <img src="https://www.iciparisxl.be/medias/ga-swy-parfum-2025-ipxl-banner-1024x350px.jpg-master.jpg?context=bWFzdGVyfGJyYW5kLWltYWdlc3wzMzA1MDZ8aW1hZ2UvanBlZ3xhRFJpTDJnd05pOHhNVFE0TmpnNU16RTNPRGt4TUM5bllWOXpkM2xmY0dGeVpuVnRYekl3TWpWZmFYQjRiRjlpWVc1dVpYSmZNVEF5Tkhnek5UQndlQzVxY0dkZmJXRnpkR1Z5TG1wd1p3fDJmYzFmMGVlZGRhYWJkNmMyMTk1OGUxNTY1NzQ3NWI5ZTZkZWRlN2NjYWNiNWE3Y2U0ZjZjZGU5YzM0ZTlmNDE" alt="Stronger With You — Emporio Armani" width="100%" />
 
   <br />
   <br />
 
-  <img src="https://img.shields.io/badge/Emporio%20Armani-Stronger%20With%20You-c9a96e?style=for-the-badge&labelColor=0d0b08" />
+  <img src="https://beauty-content.douglas.de//6373461de2e197002d8d7876/SvNV25-ga_swy_intensely_2025_banner_digital_douglas_ingredients_2016x2016px_master_jpg.jpg" />
 
   <br />
   <br />
@@ -51,7 +51,7 @@ The application takes the user through a series of animated sections, each chore
 
 <div align="center">
 
-  <img src="https://www.fragrancex.com/products/_cid_perfume-am-lid_S-am-pid_76910w__/path/product/img/SWYIAH17S.jpg" alt="Stronger With You Intensely" width="300" />
+  <img src="https://www.mustbeauty.dz/wp-content/uploads/2020/04/SWY-INTENSETY.jpg" alt="Stronger With You Intensely" width="300" />
 
   <br />
   <br />
