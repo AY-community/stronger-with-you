@@ -1,10 +1,8 @@
 <div align="center">
-  <img src="https://www.iciparisxl.be/medias/ga-swy-parfum-2025-ipxl-banner-1024x350px.jpg-master.jpg?context=bWFzdGVyfGJyYW5kLWltYWdlc3wzMzA1MDZ8aW1hZ2UvanBlZ3xhRFJpTDJnd05pOHhNVFE0TmpnNU16RTNPRGt4TUM5bllWOXpkM2xmY0dGeVpuVnRYekl3TWpWZmFYQjRiRjlpWVc1dVpYSmZNVEF5Tkhnek5UQndlQzVxY0dkZmJXRnpkR1Z5TG1wd1p3fDJmYzFmMGVlZGRhYWJkNmMyMTk1OGUxNTY1NzQ3NWI5ZTZkZWRlN2NjYWNiNWE3Y2U0ZjZjZGU5YzM0ZTlmNDE" alt="Stronger With You — Emporio Armani" width="100%" />
+  <h2>Stronger With You — Emporio Armani </h2>
 
   <br />
   <br />
-
-  <img src="https://beauty-content.douglas.de//6373461de2e197002d8d7876/SvNV25-ga_swy_intensely_2025_banner_digital_douglas_ingredients_2016x2016px_master_jpg.jpg" />
 
   <br />
   <br />
@@ -51,7 +49,7 @@ The application takes the user through a series of animated sections, each chore
 
 <div align="center">
 
-  <img src="https://www.mustbeauty.dz/wp-content/uploads/2020/04/SWY-INTENSETY.jpg" alt="Stronger With You Intensely" width="300" />
+
 
   <br />
   <br />
