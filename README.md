@@ -2,7 +2,8 @@
   <h2>Stronger With You — Emporio Armani </h2>
 
   <br />
-  <br />
+
+  [![Live Demo](https://img.shields.io/badge/Live_Demo-stronger--with--you.vercel.app-88ce02?style=for-the-badge&logo=vercel)](https://stronger-with-you.vercel.app/)
 
   <br />
   <br />
@@ -49,8 +50,6 @@ The application takes the user through a series of animated sections, each chore
 
 <div align="center">
 
-
-
   <br />
   <br />
 
@@ -61,5 +60,5 @@ The application takes the user through a series of animated sections, each chore
 ---
 
 <div align="center">
-  <sub>Built with React · TypeScript · GSAP &nbsp;—&nbsp; Emporio Armani 2024</sub>
+  <sub>Built with React · TypeScript · GSAP &nbsp;—&nbsp; [Stronger With You](https://stronger-with-you.vercel.app/)</sub>
 </div>
